@@ -78,6 +78,15 @@ func readFromArgs() []string {
 }
 
 func readFromStdIn() []string {
+	info, _ := os.Stdin.Stat()
+
+	if info.Mode()&os.ModeCharDevice != 0 {
+		fmt.Println("Command must take a string argument or input")
+		fmt.Println("Usage: echo 'hello world' | gosay")
+		fmt.Println("Usage: gosay 'hello world'")
+		os.Exit(1)
+	}
+
 	var output []string
 
 	reader := bufio.NewReader(os.Stdin)
