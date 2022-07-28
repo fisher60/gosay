@@ -1,5 +1,3 @@
-module gosay
-
-replace gosay => github.com/fisher60/gosay latest
+module github.com/fisher60/gosay
 
 go 1.18
