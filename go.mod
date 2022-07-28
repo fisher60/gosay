@@ -1,3 +1,3 @@
-module github.com/fisher60/gosay v0.1.0
+module github.com/fisher60/gosay
 
 go 1.18
